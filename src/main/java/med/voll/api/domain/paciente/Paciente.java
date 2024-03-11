@@ -1,10 +1,10 @@
-package med.voll.api.paciente;
+package med.voll.api.domain.paciente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import med.voll.api.endereco.Endereco;
+import med.voll.api.domain.endereco.Endereco;
 
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
@@ -50,7 +50,7 @@ public class Paciente {
         return endereco;
     }
 
-    public boolean getAtivo(){
+    public boolean getAtivo() {
         return ativo;
     }
 
@@ -64,11 +64,11 @@ public class Paciente {
     }
 
     public void atualizarInformacoes(DadosAtualizacaoPaciente dados) {
-        if(dados.nome() != null){
+        if (dados.nome() != null) {
             this.nome = dados.nome();
         }
 
-        if(dados.telefone() != null){
+        if (dados.telefone() != null) {
             this.telefone = dados.telefone();
         }
 
