@@ -3,6 +3,7 @@ package med.voll.api.domain.medico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.domain.endereco.Endereco;
 
@@ -10,6 +11,7 @@ import med.voll.api.domain.endereco.Endereco;
 @Table(name = "medicos")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 @EqualsAndHashCode(of = "id")
 public class Medico {
 
@@ -26,38 +28,6 @@ public class Medico {
     private Endereco endereco;
 
     private boolean ativo;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getCrm() {
-        return crm;
-    }
-
-    public boolean getAtivo() {
-        return ativo;
-    }
-
-    public Especialidade getEspecialidade() {
-        return especialidade;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
 
     public Medico(DadosCadastroMedico dados) {
         this.nome = dados.nome();
